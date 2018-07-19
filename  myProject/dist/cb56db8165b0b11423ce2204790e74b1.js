@@ -71,7 +71,7 @@ require = (function (modules, cache, entry) {
 
   // Override the current require with this new one
   return newRequire;
-})({15:[function(require,module,exports) {
+})({18:[function(require,module,exports) {
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -124,13 +124,6 @@ var bindAll = exports.bindAll = function bindAll(context) {
   });
 };
 
-var getMidnightWeather = exports.getMidnightWeather = function getMidnightWeather(list) {
-  return list.filter(function (_ref) {
-    var date = _ref.dt_txt;
-    return date.includes(MIDNIGHT_HOURS);
-  });
-};
-
 function RequestError(response) {
   this.status = response.statusText;
   this.code = response.status;
@@ -168,16 +161,7 @@ var extractUrlParams = exports.extractUrlParams = function extractUrlParams(temp
     return acc;
   }, params);
 };
-var getTime = exports.getTime = function getTime() {
-  var now = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : new Date();
-
-  var ss = now.getSeconds().toString().padStart(2, '0');
-  var mm = now.getMinutes().toString().padStart(2, '0');
-  var hh = now.getHours().toString().padStart(2, '0');
-
-  return hh + ':' + mm + ':' + ss;
-};
-},{}],14:[function(require,module,exports) {
+},{}],17:[function(require,module,exports) {
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -258,7 +242,7 @@ var Component = function () {
 }();
 
 exports.default = Component;
-},{"../utils":15}],19:[function(require,module,exports) {
+},{"../utils":18}],24:[function(require,module,exports) {
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -275,7 +259,7 @@ Object.defineProperty(exports, 'Component', {
 });
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-},{"./Component":14}],12:[function(require,module,exports) {
+},{"./Component":17}],15:[function(require,module,exports) {
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -309,17 +293,17 @@ var Header = function (_Component) {
   _createClass(Header, [{
     key: 'render',
     value: function render() {
+
       var headerWrapper = document.createElement('div');
       var logoLink = document.createElement('a');
       var navigationEl = document.createElement('nav');
       var logoutButton = document.createElement('a');
 
       headerWrapper.className = 'header-wrapper';
-      logoLink.className = 'logo';
+
       logoutButton.className = 'logout button';
 
-      logoLink.textContent = 'Logo';
-      navigationEl.innerHTML = '\n      <a class="queue-link" href="#/auction">Auction</a>\n      <a class="order-link" href="#/contacts">contact</a>\n      <a class="profile-link" href="#/profile">Profile</a>';
+      navigationEl.innerHTML = '\n    <ul class="slides">\n    <input type="radio" name="radio-btn" id="img-1" checked />\n    <li class="slide-container">\n\t\t<div class="slide">\n\t\t\t<img src="http://farm9.staticflickr.com/8072/8346734966_f9cd7d0941_z.jpg" />\n        </div>\n\t\t<div class="nav">\n\t\t\t<label for="img-6" class="prev">&#x2039;</label>\n\t\t\t<label for="img-2" class="next">&#x203a;</label>\n\t\t</div>\n    </li>\n\n    <input type="radio" name="radio-btn" id="img-2" />\n    <li class="slide-container">\n        <div class="slide">\n          <img src="http://farm9.staticflickr.com/8504/8365873811_d32571df3d_z.jpg" />\n        </div>\n\t\t<div class="nav">\n\t\t\t<label for="img-1" class="prev">&#x2039;</label>\n\t\t\t<label for="img-3" class="next">&#x203a;</label>\n\t\t</div>\n    </li>\n\n    <input type="radio" name="radio-btn" id="img-3" />\n    <li class="slide-container">\n        <div class="slide">\n          <img src="http://farm9.staticflickr.com/8068/8250438572_d1a5917072_z.jpg" />\n        </div>\n\t\t<div class="nav">\n\t\t\t<label for="img-2" class="prev">&#x2039;</label>\n\t\t\t<label for="img-4" class="next">&#x203a;</label>\n\t\t</div>\n    </li>\n\n    <input type="radio" name="radio-btn" id="img-4" />\n    <li class="slide-container">\n        <div class="slide">\n          <img src="http://farm9.staticflickr.com/8061/8237246833_54d8fa37f0_z.jpg" />\n        </div>\n\t\t<div class="nav">\n\t\t\t<label for="img-3" class="prev">&#x2039;</label>\n\t\t\t<label for="img-5" class="next">&#x203a;</label>\n\t\t</div>\n    </li>\n\n    <input type="radio" name="radio-btn" id="img-5" />\n    <li class="slide-container">\n        <div class="slide">\n          <img src="http://farm9.staticflickr.com/8055/8098750623_66292a35c0_z.jpg" />\n        </div>\n\t\t<div class="nav">\n\t\t\t<label for="img-4" class="prev">&#x2039;</label>\n\t\t\t<label for="img-6" class="next">&#x203a;</label>\n\t\t</div>\n    </li>\n\n    <input type="radio" name="radio-btn" id="img-6" />\n    <li class="slide-container">\n        <div class="slide">\n          <img src="http://farm9.staticflickr.com/8195/8098750703_797e102da2_z.jpg" />\n        </div>\n\t\t<div class="nav">\n\t\t\t<label for="img-5" class="prev">&#x2039;</label>\n\t\t\t<label for="img-1" class="next">&#x203a;</label>\n\t\t</div>\n    </li>\n\n    <li class="nav-dots">\n      <label for="img-1" class="nav-dot" id="img-dot-1"></label>\n      <label for="img-2" class="nav-dot" id="img-dot-2"></label>\n      <label for="img-3" class="nav-dot" id="img-dot-3"></label>\n      <label for="img-4" class="nav-dot" id="img-dot-4"></label>\n      <label for="img-5" class="nav-dot" id="img-dot-5"></label>\n      <label for="img-6" class="nav-dot" id="img-dot-6"></label>\n    </li>\n</ul>\n      <a class="auction-link" href="#/auction">Auction</a>\n      <a class="addbid-link" href="#/addbid">Add Bid</a>\n      <a class="contact-link" href="#/contacts">contact</a>\n      <a class="profile-link" href="#/profile">Profile</a>\n      <a class="gallery-link" href="#/gallery">Gallery</a>';
       logoutButton.textContent = 'Log out';
 
       logoLink.href = '#/queue';
@@ -329,29 +313,12 @@ var Header = function (_Component) {
          AUTH_SERVICE.logout();
        });
        */
-      this.setActiveLink(navigationEl, this.activeLink);
 
       navigationEl.appendChild(logoutButton);
-      headerWrapper.appendChild(logoLink);
-      headerWrapper.innerHTML += '\n      <input type="checkbox" id="hamburger-checkbox">\n      <label for="hamburger-checkbox">\n        <span></span>\n        <span></span>\n        <span></span>\n      </label> ';
+
       headerWrapper.appendChild(navigationEl);
 
       return headerWrapper;
-    }
-  }, {
-    key: 'setActiveLink',
-    value: function setActiveLink(container, activeLink) {
-      switch (activeLink) {
-        case 'queue':
-          container.querySelector('.queue-link').classList.add('active');
-          break;
-        case 'order':
-          container.querySelector('.order-link').classList.add('active');
-          break;
-        case 'profile':
-          container.querySelector('.profile-link').classList.add('active');
-          break;
-      }
     }
   }]);
 
@@ -359,7 +326,7 @@ var Header = function (_Component) {
 }(_framework.Component);
 
 exports.default = Header;
-},{"../framework":19,"../utils":15}],13:[function(require,module,exports) {
+},{"../framework":24,"../utils":18}],14:[function(require,module,exports) {
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -400,7 +367,90 @@ var Footer = function (_Component) {
 }(_framework.Component);
 
 exports.default = Footer;
-},{"../framework":19}],5:[function(require,module,exports) {
+},{"../framework":24}],16:[function(require,module,exports) {
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _framework = require('../framework');
+
+var _utils = require('../utils');
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+//import Message from './Message';
+//import AUTH_SERVICE from '../service/AuthService'
+var List = function (_Component) {
+	_inherits(List, _Component);
+
+	function List(props) {
+		_classCallCheck(this, List);
+
+		var _this = _possibleConstructorReturn(this, (List.__proto__ || Object.getPrototypeOf(List)).call(this, props));
+
+		_this.state = {
+			bets: null
+		};
+		_this.host = document.createElement('div');
+		_this.host.classList.add('list__container');
+		_this.host.addEventListener('submit', function (ev) {
+			return _this.handleSubmit(ev);
+		});
+		(0, _utils.bindAll)(_this);
+		_this.getBets();
+		//this.message = new Message();
+		return _this;
+	}
+
+	_createClass(List, [{
+		key: 'getBets',
+		value: function getBets() {
+			var itemStorage = void 0;
+			var fList = localStorage.getItem('itemStorage');
+			if (fList !== undefined) {
+				itemStorage = JSON.parse(fList);
+			}
+			this.updateState({ bets: itemStorage });
+		}
+	}, {
+		key: 'handleSubmit',
+		value: function handleSubmit(ev) {
+			ev.preventDefault();
+			var bidD = { bidAdd: ev.target.bid0.value };
+
+			console.log('ok');
+		}
+	}, {
+		key: 'render',
+		value: function render() {
+			var bets = this.state.bets;
+
+			console.log(localStorage);
+			if (!bets) return '\n\t\t\t<p class="message--success">\n\t\t\t\tLoading...\n\t\t\t</p>';
+
+			if (!bets.length) return '\n\t\t\t<p class="message--success">\n\t\t\t\tList is empty\n\t\t\t</p>\n\t\t';
+
+			return bets.map(function (bet, i) {
+				var html = '\n\t\t\t\t<article class="list__item">\n\t\t\t\t\t<img src="' + ("data:image/png;base64," + bet.file[0]) + '" class="item__pic">\n\t\t\t\t\t<h3 class="id">\n\t\t\t\t\t\t#' + (i + 1) + '\n\t\t\t\t\t</h3>\n\t\t\t\t\t<span class="item__price">\n\t\t\t\t\t\t' + bet.betname + '\n                    </span>\n                    <span class="item__price">\n\t\t\t\t\t\t' + bet.betname + '\n                    </span>\n                    <span class="item__price">\n\t\t\t\t\t\t' + bet.price + '\n                    </span>\n                    <input type="bid" class="bid__password" name="bid' + i + '" id="bid">\n\t\t\t\t\t<input\n\t\t\t\t\ttype="submit" \n\t\t\t\t\t   class="button create__button \n\t\t\t\t\t\t   create__button--submit" \n\t\t\t\t\t   value="Create Bid">\n\t\t\t\t</article>\n\t\t\t';
+				var fragment = (0, _utils.toHtml)(html);
+				return fragment;
+			});
+		}
+	}]);
+
+	return List;
+}(_framework.Component);
+
+exports.default = List;
+},{"../framework":24,"../utils":18}],5:[function(require,module,exports) {
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -421,6 +471,10 @@ var _Footer = require('./components/Footer');
 
 var _Footer2 = _interopRequireDefault(_Footer);
 
+var _List = require('./components/List');
+
+var _List2 = _interopRequireDefault(_List);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -429,83 +483,40 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var App = function (_Component) {
-  _inherits(App, _Component);
+var Auction = function (_Component) {
+  _inherits(Auction, _Component);
 
-  function App() {
-    _classCallCheck(this, App);
+  function Auction(props) {
+    _classCallCheck(this, Auction);
 
-    var _this = _possibleConstructorReturn(this, (App.__proto__ || Object.getPrototypeOf(App)).call(this));
+    var _this = _possibleConstructorReturn(this, (Auction.__proto__ || Object.getPrototypeOf(Auction)).call(this, props));
 
-    _this.state = {
-      inputValue: '',
-      hasError: false,
-      todayForecast: null,
-      weekForecast: null
-    };
-
-    (0, _utils.bindAll)(_this, 'handleHistoryChange', 'handleError', 'updateState');
     _this.header = new _Header2.default();
+    _this.list = new _List2.default();
     _this.footer = new _Footer2.default();
     _this.host = document.createElement('div');
     _this.host.classList.add('application-container');
+    _this.main = document.createElement('main');
+    _this.main.classList.add('main');
 
-    window.addEventListener('popstate', function (_ref) {
-      var state = _ref.state;
-
-      _this.updateState(state);
-    });
     return _this;
   }
 
-  _createClass(App, [{
-    key: 'onBeforeUpdate',
-    value: function onBeforeUpdate() {
-      var city = new URLSearchParams(window.location.search).get('city');
-
-      if (!!city) {
-        this.getCityForecast(city).then(function (state) {
-          window.history.replaceState(state, null, '?city=' + state.todayForecast.name);
-        });
-      }
-    }
-  }, {
-    key: 'handleHistoryChange',
-    value: function handleHistoryChange(_ref2) {
-      var state = _ref2.state;
-
-      this.updateState(state);
-    }
-  }, {
-    key: 'handleError',
-    value: function handleError() {
-      this.updateState({ hasError: true });
-    }
-  }, {
+  _createClass(Auction, [{
     key: 'render',
     value: function render() {
-      var _state = this.state,
-          todayForecast = _state.todayForecast,
-          weekForecast = _state.weekForecast,
-          inputValue = _state.inputValue;
-
-
-      var toRender = [
-      /*this._locationSearch.update({
-        inputValue,
-        onSubmit: this.handleSearchSubmit,
-      }),*/
-      this.header.update(), this.footer.update()];
+      this.main.append(this.list.update());
+      var toRender = [this.header.update(), this.main, this.footer.update()];
 
       return toRender;
     }
   }]);
 
-  return App;
+  return Auction;
 }(_framework.Component);
 
-exports.default = App;
-},{"./framework":19,"./utils":15,"./components/Header":12,"./components/Footer":13}],7:[function(require,module,exports) {
+exports.default = Auction;
+},{"./framework":24,"./utils":18,"./components/Header":15,"./components/Footer":14,"./components/List":16}],7:[function(require,module,exports) {
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -637,7 +648,217 @@ var Router = function (_Component) {
 }(_Component3.default);
 
 exports.default = Router;
-},{"./Component":14,"../utils":15}],16:[function(require,module,exports) {
+},{"./Component":17,"../utils":18}],25:[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+var store = exports.store = function store(theForm, logStore) {
+  logStore.push(theForm);
+  var logStoreList = JSON.stringify(logStore);
+  localStorage.setItem("logStore", logStoreList);
+
+  console.log(localStorage);
+  return false;
+};
+var logStorage = exports.logStorage = [];
+var itemStore = exports.itemStore = [];
+var storeData = exports.storeData = function storeData(data, itemStorage) {
+  var i = [];
+
+  if (data.file) {
+    data.file.then(function (data) {
+      i[0] = data;
+      return data;
+    });
+    console.log(itemStorage);
+  }
+  data.file = i;
+  itemStorage.push(data);
+  var itemStoreList = JSON.stringify(itemStorage);
+  localStorage.setItem("itemStorage", itemStoreList);
+};
+//function to sign in
+function login(theForm) {
+  document.getElementById('welcomeMessage').innerHTML = "";
+  var inputUsername = theForm["username"];
+  var inputPassword = theForm["password"];
+  var username = inputUsername.value;
+  var password = inputPassword.value;
+  if (username == localStorage.getItem('username') && password == localStorage.getItem('password')) {
+    document.getElementById('welcomeMessage').innerHTML = "Welcome " + localStorage.getItem('username') + "!";
+  } else {
+    document.getElementById('welcomeMessage').innerHTML = "Invalid Log-in!";
+  }
+  return false;
+} // end login()
+var getBase64Image = exports.getBase64Image = function getBase64Image(img) {
+  var canvas = document.createElement("canvas");
+  canvas.width = img.width;
+  canvas.height = img.height;
+
+  var ctx = canvas.getContext("2d");
+  ctx.drawImage(img, 0, 0);
+
+  var dataURL = canvas.toDataURL("image/png");
+
+  return dataURL.replace(/^data:image\/(png|jpg);base64,/, "");
+};
+var getBet = exports.getBet = function getBet() {};
+},{}],21:[function(require,module,exports) {
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _framework = require('../framework');
+
+var _utils = require('../utils');
+
+var _AuthService = require('./service/AuthService');
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var CreateBid = function (_Component) {
+    _inherits(CreateBid, _Component);
+
+    function CreateBid(props) {
+        _classCallCheck(this, CreateBid);
+
+        var _this = _possibleConstructorReturn(this, (CreateBid.__proto__ || Object.getPrototypeOf(CreateBid)).call(this, props));
+
+        _this.host = document.createElement('div');
+        _this.host.classList.add('login-form__container');
+
+        _this.host.addEventListener('submit', function (ev) {
+            return _this.handleSubmit(ev);
+        });
+        _this.banImg = document.getElementById('bannerImg');
+        _this.result = document.getElementById('res');
+        _this.img = document.getElementById('tableBanner');
+
+        return _this;
+    }
+
+    _createClass(CreateBid, [{
+        key: 'handleSubmit',
+        value: function handleSubmit(ev) {
+            ev.preventDefault();
+            var bidData = {
+                betname: ev.target.betname.value,
+                description: ev.target.decription.value,
+                price: ev.target.price.value,
+                file: this.saveTo(ev.target.bannerImg.files[0])
+
+            };
+            console.log(bidData.file);
+
+            return (0, _AuthService.storeData)(bidData, _AuthService.itemStore);
+        }
+    }, {
+        key: 'saveTo',
+        value: function saveTo(image) {
+            var file = image;
+            var fReader = new FileReader();
+            var img = document.getElementById('tableBanner');
+            return new Promise(function (resolve) {
+                fReader.onload = function () {
+                    img.src = fReader.result;
+                    resolve((0, _AuthService.getBase64Image)(img));
+                    localStorage.setItem("imgData", (0, _AuthService.getBase64Image)(img));
+                };
+                fReader.readAsDataURL(file);
+            });
+        }
+    }, {
+        key: 'render',
+        value: function render() {
+
+            var form = '\n\t\t<form class="bet-form" method="post">\n\t\t<label for="betname">Item Name</label>\n\t\t<input type="text" class="bet-form__name" name="betname" id="betname" required>\n\t\t<label for="description">Description</label>\n\t\t<input type="decription" class="decription-form" name="decription" id="decription" required>\n\t\t<label for="start">start price</label>\n\t\t<input type="price" class="price-form__start" name="price"\n            id="price" required>\n            <input type="file" id="bannerImg"  />\n            <img src="" id="tableBanner" />\n         \n            <div id="res"></div>\n            <div class="create-pizza__button-wrapper">\n            <a \n                href="#/auction"\n                class="button create-__button \n                    create__button--reset" \n            >Cancel</a>\n            <input\n             type="submit" \n                class="button create__button \n                    create__button--submit" \n                value="Create Bid">\n                \n        </div>\n    </form>\n    \n        ';
+
+            return [(0, _utils.toHtml)(form)];
+        }
+    }]);
+
+    return CreateBid;
+}(_framework.Component);
+
+exports.default = CreateBid;
+},{"../framework":24,"../utils":18,"./service/AuthService":25}],9:[function(require,module,exports) {
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _framework = require('./framework');
+
+var _utils = require('./utils');
+
+var _Header = require('./components/Header');
+
+var _Header2 = _interopRequireDefault(_Header);
+
+var _reateBid = require('./components/\u0421reateBid');
+
+var _reateBid2 = _interopRequireDefault(_reateBid);
+
+var _Footer = require('./components/Footer');
+
+var _Footer2 = _interopRequireDefault(_Footer);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var AddBid = function (_Component) {
+	_inherits(AddBid, _Component);
+
+	function AddBid(props) {
+		_classCallCheck(this, AddBid);
+
+		var _this = _possibleConstructorReturn(this, (AddBid.__proto__ || Object.getPrototypeOf(AddBid)).call(this, props));
+
+		_this.host = document.createElement('div');
+		_this.host.classList.add('login__container');
+
+		_this.header = new _Header2.default();
+		_this.loginForm = new _reateBid2.default();
+		_this.footer = new _Footer2.default();
+
+		_this.main = document.createElement('main');
+		_this.main.classList.add('main');
+		return _this;
+	}
+
+	_createClass(AddBid, [{
+		key: 'render',
+		value: function render() {
+			this.main.append(this.loginForm.update());
+
+			return [this.header.update(), this.main, this.footer.update()];
+		}
+	}]);
+
+	return AddBid;
+}(_framework.Component);
+
+exports.default = AddBid;
+},{"./framework":24,"./utils":18,"./components/Header":15,"./components/СreateBid":21,"./components/Footer":14}],20:[function(require,module,exports) {
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -659,13 +880,13 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 //
 //import Message from './Message';
 //import AUTH_SERVICE from '../service/AuthService'
-var LoginForm = function (_Component) {
-	_inherits(LoginForm, _Component);
+var Gallery = function (_Component) {
+	_inherits(Gallery, _Component);
 
-	function LoginForm(props) {
-		_classCallCheck(this, LoginForm);
+	function Gallery(props) {
+		_classCallCheck(this, Gallery);
 
-		var _this = _possibleConstructorReturn(this, (LoginForm.__proto__ || Object.getPrototypeOf(LoginForm)).call(this, props));
+		var _this = _possibleConstructorReturn(this, (Gallery.__proto__ || Object.getPrototypeOf(Gallery)).call(this, props));
 
 		_this.host = document.createElement('div');
 		_this.host.classList.add('login-form__container');
@@ -678,7 +899,7 @@ var LoginForm = function (_Component) {
 		return _this;
 	}
 
-	_createClass(LoginForm, [{
+	_createClass(Gallery, [{
 		key: 'handleSubmit',
 		value: function handleSubmit(ev) {
 			ev.preventDefault();
@@ -688,22 +909,23 @@ var LoginForm = function (_Component) {
 				password: ev.target.password.value
 			};
 
-			return localStorage.getItem(userData);
+			return username;
 		}
 	}, {
 		key: 'render',
 		value: function render() {
+
 			var f = '\n<form class="login-form" method="post">\n\t<label for="username">Username:</label>\n\t<input type="text" class="login-form__name" name="username" id="username" required>\n\t<label for="password">Password:</label>\n\t<input type="password" class="login-form__password" name="password"\n\t\tid="password" required>\n\t<div class="login-form__button-wrapper">\n\t\t<input type="submit" class="button login-form__button button--sign-in"\n\t\t\tvalue="Login">\n\t\t<a href="#/register" class="button login-form__button button--sign-up">\n\t\t\tSign up\n\t\t</a>\n\t</div>\n</form>\n\t\t';
 			var form = (0, _utils.toHtml)(f);
 			return [form];
 		}
 	}]);
 
-	return LoginForm;
+	return Gallery;
 }(_framework.Component);
 
-exports.default = LoginForm;
-},{"../framework":19,"../utils":15}],9:[function(require,module,exports) {
+exports.default = Gallery;
+},{"../framework":24,"../utils":18}],11:[function(require,module,exports) {
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -769,7 +991,57 @@ var Login = function (_Component) {
 }(_framework.Component);
 
 exports.default = Login;
-},{"./framework":19,"./utils":15,"./components/Header":12,"./components/LoginForm":16,"./components/Footer":13}],11:[function(require,module,exports) {
+},{"./framework":24,"./utils":18,"./components/Header":15,"./components/LoginForm":20,"./components/Footer":14}],19:[function(require,module,exports) {
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _framework = require('../framework');
+
+var _utils = require('../utils');
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+//
+//import Message from './Message';
+//import AUTH_SERVICE from '../service/AuthService'
+var Contact = function (_Component) {
+	_inherits(Contact, _Component);
+
+	function Contact(props) {
+		_classCallCheck(this, Contact);
+
+		var _this = _possibleConstructorReturn(this, (Contact.__proto__ || Object.getPrototypeOf(Contact)).call(this, props));
+
+		_this.host = document.createElement('div');
+		_this.host.classList.add('contact-form__container');
+
+		//this.message = new Message();
+		return _this;
+	}
+
+	_createClass(Contact, [{
+		key: 'render',
+		value: function render() {
+			var f = '<iframe\n        width="60%"\n        height="400"\n        frameborder="0" style="border:0"\n        src="https://www.google.com/maps/embed/v1/place?key=AIzaSyAulJ782upLgK_Tvrip2rGgzi2BWtFu89o\n          &q=EPAM,Kyiv" allowfullscreen>\n      </iframe>';
+			var form = (0, _utils.toHtml)(f);
+			return [form];
+		}
+	}]);
+
+	return Contact;
+}(_framework.Component);
+
+exports.default = Contact;
+},{"../framework":24,"../utils":18}],10:[function(require,module,exports) {
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -785,6 +1057,10 @@ var _utils = require('./utils');
 var _Header = require('./components/Header');
 
 var _Header2 = _interopRequireDefault(_Header);
+
+var _Contacts = require('./components/Contacts');
+
+var _Contacts2 = _interopRequireDefault(_Contacts);
 
 var _Footer = require('./components/Footer');
 
@@ -810,7 +1086,7 @@ var Login = function (_Component) {
 		_this.host.classList.add('login__container');
 
 		_this.header = new _Header2.default();
-
+		_this.loginForm = new _Contacts2.default();
 		_this.footer = new _Footer2.default();
 
 		_this.main = document.createElement('main');
@@ -821,11 +1097,9 @@ var Login = function (_Component) {
 	_createClass(Login, [{
 		key: 'render',
 		value: function render() {
-			//this.main.append(this.loginForm.update());
+			this.main.append(this.loginForm.update());
 
-			return [this.header.update(),
-			//this.main,
-			this.footer.update()];
+			return [this.header.update(), this.main, this.footer.update()];
 		}
 	}]);
 
@@ -833,7 +1107,7 @@ var Login = function (_Component) {
 }(_framework.Component);
 
 exports.default = Login;
-},{"./framework":19,"./utils":15,"./components/Header":12,"./components/Footer":13}],23:[function(require,module,exports) {
+},{"./framework":24,"./utils":18,"./components/Header":15,"./components/Contacts":19,"./components/Footer":14}],22:[function(require,module,exports) {
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -846,13 +1120,14 @@ var _framework = require('../framework');
 
 var _utils = require('../utils');
 
+var _AuthService = require('./service/AuthService');
+
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-//
 //import Message from './Message';
 //import AUTH_SERVICE from '../service/AuthService'
 var RegisterForm = function (_Component) {
@@ -886,8 +1161,8 @@ var RegisterForm = function (_Component) {
 				email: ev.target.email.value
 
 			};
-
-			return localStorage.setItem('userData', userData);
+			console.log(localStorage);
+			return (0, _AuthService.store)(userData, _AuthService.logStorage);
 		}
 	}, {
 		key: 'render',
@@ -902,7 +1177,7 @@ var RegisterForm = function (_Component) {
 }(_framework.Component);
 
 exports.default = RegisterForm;
-},{"../framework":19,"../utils":15}],10:[function(require,module,exports) {
+},{"../framework":24,"../utils":18,"./service/AuthService":25}],12:[function(require,module,exports) {
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -968,16 +1243,134 @@ var Register = function (_Component) {
 }(_framework.Component);
 
 exports.default = Register;
-},{"./framework":19,"./utils":15,"./components/Header":12,"./components/RegisterForm":23,"./components/Footer":13}],6:[function(require,module,exports) {
+},{"./framework":24,"./utils":18,"./components/Header":15,"./components/RegisterForm":22,"./components/Footer":14}],23:[function(require,module,exports) {
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _App = require('./App');
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _App2 = _interopRequireDefault(_App);
+var _framework = require('../framework');
+
+var _utils = require('../utils');
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Gallery = function (_Component) {
+  _inherits(Gallery, _Component);
+
+  function Gallery(props) {
+    _classCallCheck(this, Gallery);
+
+    var _this = _possibleConstructorReturn(this, (Gallery.__proto__ || Object.getPrototypeOf(Gallery)).call(this, props));
+
+    (0, _utils.bindAll)(_this);
+    _this.host = document.createElement('div');
+    _this.host.classList.add('login-form__container');
+
+    return _this;
+  }
+
+  _createClass(Gallery, [{
+    key: 'render',
+    value: function render() {
+
+      var f = '\n        <div class="gallery cf"><div>\n        <img src="http://abload.de/img/a6aawu.jpg" />\n        </div>\n        <div>\n        <img src="http://abload.de/img/a6aawu.jpg" />\n        </div>\n         <div>\n         <img src="http://abload.de/img/a6aawu.jpg" />\n  </div>\n  <div>\n    <img src="http://abload.de/img/a6aawu.jpg" />\n  </div>\n  <div>\n    <img src="http://abload.de/img/a6aawu.jpg" />\n  </div>\n  <div>\n    <img src="http://abload.de/img/a6aawu.jpg" />\n  </div>\n</div>\n\t\t';
+      var form = (0, _utils.toHtml)(f);
+      return [form];
+    }
+  }]);
+
+  return Gallery;
+}(_framework.Component);
+
+exports.default = Gallery;
+},{"../framework":24,"../utils":18}],13:[function(require,module,exports) {
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _framework = require('./framework');
+
+var _utils = require('./utils');
+
+var _Header = require('./components/Header');
+
+var _Header2 = _interopRequireDefault(_Header);
+
+var _Gallery = require('./components/Gallery');
+
+var _Gallery2 = _interopRequireDefault(_Gallery);
+
+var _Footer = require('./components/Footer');
+
+var _Footer2 = _interopRequireDefault(_Footer);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var GalleryMain = function (_Component) {
+	_inherits(GalleryMain, _Component);
+
+	function GalleryMain(props) {
+		_classCallCheck(this, GalleryMain);
+
+		var _this = _possibleConstructorReturn(this, (GalleryMain.__proto__ || Object.getPrototypeOf(GalleryMain)).call(this, props));
+
+		_this.host = document.createElement('div');
+		_this.host.classList.add('login__container');
+
+		_this.header = new _Header2.default();
+		_this.gallery = new _Gallery2.default();
+		_this.footer = new _Footer2.default();
+
+		_this.main = document.createElement('main');
+		_this.main.classList.add('main');
+		return _this;
+	}
+
+	_createClass(GalleryMain, [{
+		key: 'render',
+		value: function render() {
+			this.main.append(this.gallery.update());
+
+			return [this.header.update(), this.main, this.footer.update()];
+		}
+	}]);
+
+	return GalleryMain;
+}(_framework.Component);
+
+exports.default = GalleryMain;
+},{"./framework":24,"./utils":18,"./components/Header":15,"./components/Gallery":23,"./components/Footer":14}],6:[function(require,module,exports) {
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _Auction = require('./Auction');
+
+var _Auction2 = _interopRequireDefault(_Auction);
+
+var _AddBid = require('./AddBid');
+
+var _AddBid2 = _interopRequireDefault(_AddBid);
 
 var _Login = require('./Login');
 
@@ -991,6 +1384,10 @@ var _Register = require('./Register');
 
 var _Register2 = _interopRequireDefault(_Register);
 
+var _GalleryMain = require('./GalleryMain');
+
+var _GalleryMain2 = _interopRequireDefault(_GalleryMain);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 //import { AUTH_SERVICE } from './service/AuthService';
@@ -999,11 +1396,15 @@ exports.default = [{
   redirectTo: '/'
 }, {
   href: '/',
-  component: _App2.default
+  component: _Auction2.default
   //canActivate: AUTH_SERVICE.isAuthorized
 }, {
   href: '/auction',
-  component: _App2.default
+  component: _Auction2.default
+  //canActivate: AUTH_SERVICE.isAuthorized
+}, {
+  href: '/addbid',
+  component: _AddBid2.default
   //canActivate: AUTH_SERVICE.isAuthorized
 }, {
   href: '/login',
@@ -1014,15 +1415,18 @@ exports.default = [{
 }, {
   href: '/register',
   component: _Register2.default
+}, {
+  href: '/gallery',
+  component: _GalleryMain2.default
 }];
-},{"./App":5,"./Login":9,"./Contact":11,"./Register":10}],3:[function(require,module,exports) {
+},{"./Auction":5,"./AddBid":9,"./Login":11,"./Contact":10,"./Register":12,"./GalleryMain":13}],3:[function(require,module,exports) {
 'use strict';
 
 var _utils = require('./utils');
 
-var _App = require('./App');
+var _Auction = require('./Auction');
 
-var _App2 = _interopRequireDefault(_App);
+var _Auction2 = _interopRequireDefault(_Auction);
 
 var _Router = require('./framework/Router');
 
@@ -1039,7 +1443,7 @@ var router = new _Router2.default(_routes2.default);
 var root = (0, _utils.clearChildren)(document.getElementById('root'));
 
 root.appendChild(router.host);
-},{"./utils":15,"./App":5,"./framework/Router":7,"./routes":6}],32:[function(require,module,exports) {
+},{"./utils":18,"./Auction":5,"./framework/Router":7,"./routes":6}],34:[function(require,module,exports) {
 
 var global = (1, eval)('this');
 var OldModule = module.bundle.Module;
@@ -1061,7 +1465,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = '' || location.hostname;
   var protocol = window.location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + '65098' + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + '56874' + '/');
   ws.onmessage = function (event) {
     var data = JSON.parse(event.data);
 
@@ -1162,5 +1566,5 @@ function hmrAccept(bundle, id) {
     return hmrAccept(global.require, id);
   });
 }
-},{}]},{},[32,3])
+},{}]},{},[34,3])
 //# sourceMappingURL=/dist/cb56db8165b0b11423ce2204790e74b1.map

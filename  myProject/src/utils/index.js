@@ -38,9 +38,6 @@ export const bindAll = (context, ...names) => {
   });
 };
 
-export const getMidnightWeather = list => {
-  return list.filter(({ dt_txt: date }) => date.includes(MIDNIGHT_HOURS));
-};
 
 export function RequestError(response) {
   this.status = response.statusText;
@@ -73,10 +70,4 @@ export const extractUrlParams = (template, url) => {
     return acc;
   }, params);
 };
-export const getTime = (now = new Date()) => {
-	const ss = now.getSeconds().toString().padStart(2, '0');
-	const mm = now.getMinutes().toString().padStart(2, '0');
-	const hh = now.getHours().toString().padStart(2, '0');
 
-	return `${hh}:${mm}:${ss}`;
-};

@@ -4,22 +4,16 @@ import { Component } from './framework';
 import { bindAll} from './utils';
 import Header from './components/Header';
 import Footer from './components/Footer';
-import CreateBid from './components/СreateBid'
+import List from './components/List'
 
 class Auction extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
 
-    this.state = {
-     
-    };
+    
 
-    bindAll(
-      this,
-     
-    );
     this.header = new Header();
-    this.createBid = new CreateBid();
+    this.list = new List();
     this.footer = new Footer();
     this.host = document.createElement('div');
     this.host.classList.add('application-container');
@@ -31,11 +25,11 @@ class Auction extends Component {
   
 
   render() {
-    this.main.append(this.createBid.update());
+  this.main.append(this.list.update());
     const toRender = [
     
       this.header.update(),
-      this.main,
+    this.main,
       this.footer.update()
     ];
 
@@ -45,4 +39,4 @@ class Auction extends Component {
   }
 }
 
-export default App;
+export default Auction;

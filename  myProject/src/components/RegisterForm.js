@@ -1,6 +1,7 @@
 import { Component } from '../framework';
 import { toHtml } from '../utils';
-//
+import {store} from './service/AuthService'
+import { logStorage} from './service/AuthService'
 //import Message from './Message';
 //import AUTH_SERVICE from '../service/AuthService'
 export default class RegisterForm extends Component {
@@ -25,10 +26,8 @@ export default class RegisterForm extends Component {
 			email: ev.target.email.value,
 			
 		};
-
-		return localStorage.setItem('userData',userData)
-		
-		
+console.log(localStorage)
+		return store(userData, logStorage)
 	}
 
 	render() {

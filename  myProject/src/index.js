@@ -1,5 +1,5 @@
 import { clearChildren } from './utils';
-import App from './App';
+import Auction from './Auction';
 import Router from './framework/Router';
 import routes from './routes';
 

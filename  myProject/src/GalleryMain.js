@@ -3,9 +3,9 @@ import { Component } from './framework';
 
 import { bindAll} from './utils';
 import Header from './components/Header';
-import Contact from './components/Contacts';
+import Gallery from './components/Gallery';
 import Footer from './components/Footer';
-export default class Login extends Component {
+export default class GalleryMain extends Component {
 	constructor(props) {
 		super(props);
 
@@ -13,7 +13,7 @@ export default class Login extends Component {
 		this.host.classList.add('login__container');
 
 		this.header = new Header();
-		this.loginForm = new Contact();
+		this.gallery = new Gallery();
 		this.footer = new Footer();
 
 		this.main = document.createElement('main');
@@ -21,7 +21,7 @@ export default class Login extends Component {
 	}
 
 	render() {
-		this.main.append(this.loginForm.update());
+		this.main.append(this.gallery.update());
 
 		return [
 			this.header.update(),

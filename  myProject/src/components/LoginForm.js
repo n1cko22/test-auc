@@ -3,7 +3,7 @@ import { toHtml } from '../utils';
 //
 //import Message from './Message';
 //import AUTH_SERVICE from '../service/AuthService'
-export default class LoginForm extends Component {
+export default class Gallery extends Component {
 	constructor(props) {
 		super(props);
 
@@ -23,11 +23,13 @@ export default class LoginForm extends Component {
 			password: ev.target.password.value,
 		};
 
-		return localStorage.getItem(userData)
+		return username
 		
 	}
 
 	render() {
+	
+	
 		const f = `
 <form class="login-form" method="post">
 	<label for="username">Username:</label>
@@ -46,8 +48,7 @@ export default class LoginForm extends Component {
 		`;
 const form = toHtml(f);
 		return [
-			form,
-			//this.message.update(),
+			form
 		];
 	}
 }

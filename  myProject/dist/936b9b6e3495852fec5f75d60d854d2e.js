@@ -132,7 +132,7 @@ function reloadCSS() {
 }
 
 module.exports = reloadCSS;
-},{"./bundle-url":8}],2:[function(require,module,exports) {
+},{"./bundle-url":8}],31:[function(require,module,exports) {
 
         var reloadCSS = require('_css_loader');
         module.hot.dispose(reloadCSS);
@@ -262,4 +262,4 @@ function hmrAccept(bundle, id) {
   });
 }
 },{}]},{},[26])
-//# sourceMappingURL=/dist/2b7b3169a7d725a6aa476933fac20a02.map
+//# sourceMappingURL=/dist/936b9b6e3495852fec5f75d60d854d2e.map
