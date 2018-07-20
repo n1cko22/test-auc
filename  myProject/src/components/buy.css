@@ -1,0 +1,204 @@
+.button{
+    padding: 1em 1em 1em 1.5em;
+    text-transform: uppercase;
+    cursor:pointer;
+    border-radius: 3px;
+    letter-spacing: 1px;
+    cursor:pointer;
+    font-size: 14px;
+    margin:1em
+    
+}
+.button:hover{
+    opacity:1;
+}
+.button_green{
+    background: #5fcac6;
+    border: 1px solid #54aca9;
+    color: #fff;
+}
+.button_bordered{
+    background: #eceef4;
+    border:1px solid #c9d0e1;
+    color:#a5abc5;
+   
+}
+
+
+
+
+.payment_btn button i{
+    position: absolute;
+    top:-8px;
+    right:-8px;
+    font-size: 20px;
+    color:blue;
+}
+.main_wrapper-head-buttons{
+    display:flex;
+    flex-direction:column;
+    
+    flex-wrap: nowrap;
+    
+}
+.flex-bottom img{
+    max-width: 80px;
+    
+}
+.flex-bottom{
+    display: flex;
+
+}
+.card-data{
+    display:flex;
+    justify-content:space-between;
+    
+}
+.choose-wrapper span{
+    display: flex;
+    justify-content: center;
+}
+.choose-wrapper{
+    margin:0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.upload_list {
+    border: 1px solid #e6e8ee;
+    margin-top: 2em;
+    padding: 2em;
+    border-radius: 3px;
+    color: #a5abc5;
+}
+
+h2::before {
+    counter-increment: section;
+    content: counter(section);
+    font-size: 16px;
+    text-align: center;
+    line-height: 2.3;
+    font-family: 'proxima_nova_altbold';
+    font-weight: 400;
+    border: 1px solid #6E768F;
+    display: block;
+    width: 36px;
+    height: 36px;
+    border-radius: 19px;
+    position:absolute;
+    top: -0.4em;
+    left: -3.5em;
+}
+h2 {
+    font-size: 1.3em;
+
+    font-weight: 600;
+    position: relative;
+    margin-bottom: 2.5em;
+    margin-top: 2.5em;
+    letter-spacing: 0.05em;
+}
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+fieldset {
+    padding: 0;
+}
+
+fieldset {
+    border: none;
+}
+.pay-input {
+    padding: 1.2em;
+    display: block;
+    width: 22em;
+    border-radius: 4px;
+    margin-top: 1em;
+    border: 1px solid #d5d7e0;
+}
+#card-number {
+    width: 26em;
+    position: relative;
+}
+
+input {
+    margin-top: 0.5em;
+    border-radius: 4px;
+    padding: 1em;
+    font-size: 0.8em;
+    border: 1px solid #d5d7e0;
+}
+.pay-input{
+    margin-right:1em;
+}
+
+
+.flex-end{
+    display: flex;
+    
+}
+a {
+    transition: opacity 0.3s;
+    text-decoration: none;
+    color: inherit;
+}
+.flex-end{
+    text-align: right;
+    line-height: 5em;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    align-items: center;
+}
+.card-details{
+    display: flex;
+    flex-wrap: wrap;
+}
+.autorisation{
+   display: flex;
+    flex-wrap: wrap; 
+}
+
+.pay-input:required:valid {
+  
+    background-size: 2em;
+    background-repeat: no-repeat;
+    background-position: center right 5%;
+}
+
+.pay-input:required:invalid:not(:placeholder-shown) {
+
+    background-size: 2em;
+    background-repeat: no-repeat;
+    background-position: center right 5%;
+}
+label[for="card-number"]::after {
+
+    font-size: 1.8em;
+    content: "\f1f0";
+    position: absolute;
+    background-color: #fff;
+    top: 1em;
+    right: 1.2em;
+    color: #d5d7e0;
+    z-index: 1
+}
+.flex-end{
+    margin-top: 4em
+}
+.flex-end label{
+    
+    margin-right: 1em;
+    font-size: 0.8em;
+}
+.flex-end a{
+    text-decoration: underline
+}
+.flex_bottom{
+    display:flex;
+    
+}
+label {
+    margin-top: 10px;
+}

@@ -2,8 +2,7 @@ import { Component } from '../framework';
 import { toHtml } from '../utils';
 import {store} from './service/AuthService'
 import { logStorage} from './service/AuthService'
-//import Message from './Message';
-//import AUTH_SERVICE from '../service/AuthService'
+import './register.css'
 export default class RegisterForm extends Component {
 	constructor(props) {
 		super(props);
@@ -13,7 +12,7 @@ export default class RegisterForm extends Component {
 
 		this.host.addEventListener('submit', ev => this.handleSubmit(ev));
 
-		//this.message = new Message();
+
 	}
 
 	handleSubmit(ev) {
@@ -32,7 +31,7 @@ console.log(localStorage)
 
 	render() {
 		const f = `
-		<form class="register-form" method="post">
+		<form class="register-form">
 		<label for="username">Username:</label>
 		<input type="text" class="register-form__name" name="username" id="username" required>
 		<label for="email">Email:</label>
@@ -49,9 +48,6 @@ console.log(localStorage)
 	</form>
 		`;
 const form = toHtml(f);
-		return [
-			form,
-			//this.message.update(),
-		];
+		return [form];
 	}
 }

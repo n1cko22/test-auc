@@ -1,5 +1,6 @@
 import { Component } from '../framework';
 import { toHtml } from '../utils';
+import './navigation.css'
 
 
 
@@ -18,9 +19,6 @@ export default class Header extends Component {
     const logoutButton = document.createElement('a');
 
     headerWrapper.className = 'header-wrapper';
- 
-    logoutButton.className = 'logout button';
-
   
     navigationEl.innerHTML = `
     <ul class="slides">
@@ -99,25 +97,17 @@ export default class Header extends Component {
       <label for="img-6" class="nav-dot" id="img-dot-6"></label>
     </li>
 </ul>
-      <a class="auction-link" href="#/auction">Auction</a>
-      <a class="addbid-link" href="#/addbid">Add Bid</a>
-      <a class="contact-link" href="#/contacts">contact</a>
-      <a class="profile-link" href="#/profile">Profile</a>
-      <a class="gallery-link" href="#/gallery">Gallery</a>` ;
-    logoutButton.textContent = 'Log out';
+<div id='cssmenu'>
+<ul>
+  <li><a href="#/auction"><span>Auction</span></a></li>
+  <li><a class="addbid-link" href="#/addbid">Add Bid</a></li>
+  <li><a class="contact-link" href="#/contacts">contact</a></li>
+  <li><a class="gallery-link" href="#/gallery">Gallery</a></li>
+  <li><a class="profile-link" href="#/login">Log in/out</a></li>
+</ul> 
+</div>
+      ` ;
 
-    logoLink.href = '#/queue';
-    logoutButton.href = '#/login';
-
-   /* logoutButton.addEventListener('click', () => {
-      AUTH_SERVICE.logout();
-    });
-    */
-   
-    
-    navigationEl.appendChild(logoutButton);
-
-  
     headerWrapper.appendChild(navigationEl);
 
     return headerWrapper;

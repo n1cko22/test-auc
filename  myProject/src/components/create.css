@@ -1,0 +1,40 @@
+.wrapper-form {
+    display: flex;
+    justify-content: space-around;
+}
+.bet-form {
+    width: 700px;
+    margin-bottom: 150px;
+    border-style: solid;
+    border-color: red;
+    display: flex;
+    flex-direction: row;
+    color: white
+        
+}
+.bet-form .wrapp-create {
+    margin: 30px;
+    display: flex;
+    flex-direction: column;
+}
+.bet-form label {
+    margin-top: 10px;
+}
+.wrapp-create input{
+    margin-top: 10px;
+}
+.wrapp-create a{
+    margin-top: 10px;
+    color: white;
+    text-decoration: none;
+}
+.wrapper-img {
+    margin-top: 20px;
+    height: 240px;
+    width: 380px;
+    display: inline-block;
+    overflow: hidden;
+}
+.wrapper-img img{
+    height:100%    
+}

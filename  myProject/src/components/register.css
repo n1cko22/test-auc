@@ -1,0 +1,7 @@
+.register-form {
+    display: flex;
+    flex-direction: column;
+}
+.register-form label{
+    margin-top: 10px;
+}

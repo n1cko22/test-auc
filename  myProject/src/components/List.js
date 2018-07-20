@@ -1,20 +1,20 @@
 import { Component } from '../framework';
 import { toHtml, bindAll } from '../utils';
+import './list.css'
 
-//import Message from './Message';
-//import AUTH_SERVICE from '../service/AuthService'
 export default class List extends Component {
 	constructor(props) {
         super(props);
         this.state = {
 			bets: null,
+			paginate: null,
 		};
         this.host = document.createElement('div');
 		this.host.classList.add('list__container');
 		this.host.addEventListener('submit', ev => this.handleSubmit(ev));
         bindAll(this)
         this.getBets();
-		//this.message = new Message();
+		
 	}
 
 
@@ -25,17 +25,10 @@ export default class List extends Component {
          itemStorage = JSON.parse(fList)
        
         }
-        this.updateState({ bets: itemStorage });      
+		this.updateState({ bets: itemStorage });  
+	 
         
 	}
-	handleSubmit(ev) {
-        ev.preventDefault();
-            const bidD = { bidAdd:ev.target.bid0.value}
-               
-            console.log('ok')
-   
-        }
-
 
     render() {
 		const { bets } = this.state;
@@ -51,32 +44,40 @@ export default class List extends Component {
 			</p>
 		`;
 
-		return bets.map((bet, i) => {
+		let betHtml= bets.map((bet, i) => {
+			let img = "https://img1.moyo.ua/img/products/3828/83_1500x_1505364451.jpg"
+		if(bet.file[0] !== undefined){
+			
+			if(bet.file[0] !== 'data:,'){
+				img = "data:image/png;base64,"+bet.file[0]
+			} 
+			
 			const html = `
-				<article class="list__item">
-					<img src="${"data:image/png;base64,"+bet.file[0]}" class="item__pic">
+			<article class="list__item">
+				<div class="wrapp-data">	
 					<h3 class="id">
 						#${i + 1}
 					</h3>
 					<span class="item__price">
-						${bet.betname}
+					Name: ${bet.betname}
                     </span>
                     <span class="item__price">
-						${bet.betname}
+					Description${bet.description}
                     </span>
                     <span class="item__price">
-						${bet.price}
+					Price in USD: ${bet.price}
                     </span>
-                    <input type="bid" class="bid__password" name="bid${i}" id="bid">
-					<input
-					type="submit" 
-					   class="button create__button 
-						   create__button--submit" 
-					   value="Create Bid">
-				</article>
+					<a class="buy" href="#/buy">Buy NOW!</a>
+				</div>
+				<div class="wrapp-img">
+					<img src="${img}" class="item__pic">
+				</div>
+			</article>
 			`;
 			const fragment = toHtml(html);
 			return fragment;
+		}
 		});
+		return betHtml
 	}
 }

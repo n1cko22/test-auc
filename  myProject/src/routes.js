@@ -4,7 +4,8 @@ import Login from './Login';
 import Contact from './Contact'
 import Register from './Register'
 import GalleryMain from './GalleryMain'
-//import { AUTH_SERVICE } from './service/AuthService';
+import Purchase from './Purchase'
+//import { comp } from './service/AuthService';
 export default [
   {
 		href: '',
@@ -13,17 +14,17 @@ export default [
   {
     href: '/',
     component: Auction,
-    //canActivate: AUTH_SERVICE.isAuthorized
+    //canActivate: comp.isAuthorized
   },
   {
     href: '/auction',
     component: Auction,
-    //canActivate: AUTH_SERVICE.isAuthorized
+    //canActivate: comp.isAuthorized
   },
   {
     href: '/addbid',
     component: AddBid,
-    //canActivate: AUTH_SERVICE.isAuthorized
+    //canActivate: comp.isAuthorized
   },
   {
     href: '/login',
@@ -40,5 +41,9 @@ export default [
   {
     href: '/gallery',
     component: GalleryMain,
+  },
+  {
+    href: '/buy',
+    component: Purchase,
   },
 ];

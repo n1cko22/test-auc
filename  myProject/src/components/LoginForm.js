@@ -1,9 +1,7 @@
 import { Component } from '../framework';
 import { toHtml } from '../utils';
-//
-//import Message from './Message';
-//import AUTH_SERVICE from '../service/AuthService'
-export default class Gallery extends Component {
+import './login.css'
+export default class LoginForm extends Component {
 	constructor(props) {
 		super(props);
 
@@ -12,7 +10,6 @@ export default class Gallery extends Component {
 
 		this.host.addEventListener('submit', ev => this.handleSubmit(ev));
 
-		//this.message = new Message();
 	}
 
 	handleSubmit(ev) {
@@ -23,8 +20,8 @@ export default class Gallery extends Component {
 			password: ev.target.password.value,
 		};
 
-		return username
-		
+		return this.props.username
+		console.log(this.props)
 	}
 
 	render() {
@@ -35,8 +32,7 @@ export default class Gallery extends Component {
 	<label for="username">Username:</label>
 	<input type="text" class="login-form__name" name="username" id="username" required>
 	<label for="password">Password:</label>
-	<input type="password" class="login-form__password" name="password"
-		id="password" required>
+	<input type="password" class="login-form__password" name="password" id="password" required>
 	<div class="login-form__button-wrapper">
 		<input type="submit" class="button login-form__button button--sign-in"
 			value="Login">
@@ -47,8 +43,7 @@ export default class Gallery extends Component {
 </form>
 		`;
 const form = toHtml(f);
-		return [
-			form
-		];
+		return form
+		
 	}
 }

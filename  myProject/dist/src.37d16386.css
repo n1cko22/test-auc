@@ -1,0 +1,529 @@
+
+#cssmenu {
+    display: flex;
+    justify-content: space-around
+  }
+  #cssmenu ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    line-height: 1;
+    display: block;
+    zoom: 1;
+  
+  }
+  #cssmenu ul:after {
+    content: " ";
+    display: block;
+    font-size: 0;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+  }
+  #cssmenu ul li {
+    display: inline-block;
+    padding: 0;
+    margin: 0;
+  }
+  #cssmenu.align-right ul li {
+    float: right;
+  }
+  #cssmenu.align-center ul {
+    text-align: center;
+  }
+  #cssmenu ul li a {
+    color: #ffffff;
+    text-decoration: none;
+    display: block;
+    padding: 15px 25px;
+    font-family: sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 14px;
+    position: relative;
+    -webkit-transition: color .25s;
+    -moz-transition: color .25s;
+    -ms-transition: color .25s;
+    -o-transition: color .25s;
+    transition: color .25s;
+  }
+  #cssmenu ul li a:hover {
+    color: #333333;
+  }
+  #cssmenu ul li a:hover:before {
+    width: 100%;
+  }
+  #cssmenu ul li a:after {
+    content: "";
+    display: block;
+    position: absolute;
+    right: -3px;
+    top: 12px;
+    height: 20px;
+    width: 6px;
+    background: #ffffff;
+    opacity: .5;
+  }
+  #cssmenu ul li a:before {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 3px;
+    width: 0;
+    background: #333333;
+    -webkit-transition: width .25s;
+    -moz-transition: width .25s;
+    -ms-transition: width .25s;
+    -o-transition: width .25s;
+    transition: width .25s;
+  }
+  #cssmenu ul li.last > a:after,
+  #cssmenu ul li:last-child > a:after {
+    display: none;
+  }
+  #cssmenu ul li.active a {
+    color: #333333;
+  }
+  #cssmenu ul li.active a:before {
+    width: 100%;
+  }
+  #cssmenu.align-right li.last > a:after,
+  #cssmenu.align-right li:last-child > a:after {
+    display: block;
+  }
+  #cssmenu.align-right li:first-child a:after {
+    display: none;
+  }
+  @media screen and (max-width: 768px) {
+    #cssmenu ul li {
+      float: none;
+      display: block;
+    }
+    #cssmenu ul li a {
+      width: 100%;
+      -moz-box-sizing: border-box;
+      -webkit-box-sizing: border-box;
+      box-sizing: border-box;
+      
+    }
+    #cssmenu ul li.last > a,
+    #cssmenu ul li:last-child > a {
+      border: 0;
+    }
+    #cssmenu ul li a:after {
+      display: none;
+    }
+    #cssmenu ul li a:before {
+      display: none;
+    }
+  }
+  .footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: red;
+    color: white;
+    text-align: center;
+    height: 100px;
+}
+.wrap {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-family: sans-serif
+}
+.wrap a {
+    text-decoration: none;
+    color: white
+}
+.fa {
+    padding: 10px;
+    font-size: 30px;
+    height: 50px;
+    width: 50px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 50%;
+}
+
+/* Add a hover effect if you want */
+.fa:hover {
+    opacity: 0.7;
+}
+
+/* Set a specific color for each brand */
+
+/* Facebook */
+.fa-facebook {
+    background: #3B5998;
+    color: white;
+}
+
+/* Twitter */
+.fa-twitter {
+    background: #55ACEE;
+    color: white;
+}.message--success {
+    display: flex;
+    justify-content: space-around;
+    height: 800px;
+    font-size: 20px
+}
+.wrapp-img {
+    margin-top: 20px;
+    height: 200px;
+    width: 200px;
+    display: inline-block;
+    overflow: hidden;
+}
+.wrapp-img img{
+    height: 100%;  
+}
+.list__item{
+    display: flex;
+    margin-left: 50px;
+    margin-top: 30px;
+    border-style: solid;
+    border-color: red;
+    color: white;
+    padding: 10px;
+}
+.list__item a {
+    text-decoration: none;
+}
+.list__container{
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 150px;
+    justify-content: space-around;
+    width: 900px;
+   
+}
+.wrapp-data {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+.wrapp-data > span {
+    margin-top: 20px;
+}
+
+.buy {
+    margin-top: 10px;
+	-moz-box-shadow:inset 0px 1px 0px 0px #ffffff;
+	-webkit-box-shadow:inset 0px 1px 0px 0px #ffffff;
+	box-shadow:inset 0px 1px 0px 0px #ffffff;
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #f9f9f9), color-stop(1, #e9e9e9));
+	background:-moz-linear-gradient(top, #f9f9f9 5%, #e9e9e9 100%);
+	background:-webkit-linear-gradient(top, #f9f9f9 5%, #e9e9e9 100%);
+	background:-o-linear-gradient(top, #f9f9f9 5%, #e9e9e9 100%);
+	background:-ms-linear-gradient(top, #f9f9f9 5%, #e9e9e9 100%);
+	background:linear-gradient(to bottom, #f9f9f9 5%, #e9e9e9 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#f9f9f9', endColorstr='#e9e9e9',GradientType=0);
+	background-color:#f9f9f9;
+	-moz-border-radius:6px;
+	-webkit-border-radius:6px;
+	border-radius:6px;
+	border:1px solid #dcdcdc;
+	display:inline-block;
+	cursor:pointer;
+	color:#666666;
+	font-family:Arial;
+	font-size:15px;
+	font-weight:bold;
+	padding:6px 24px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #ffffff;
+}
+.buy:hover {
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #e9e9e9), color-stop(1, #f9f9f9));
+	background:-moz-linear-gradient(top, #e9e9e9 5%, #f9f9f9 100%);
+	background:-webkit-linear-gradient(top, #e9e9e9 5%, #f9f9f9 100%);
+	background:-o-linear-gradient(top, #e9e9e9 5%, #f9f9f9 100%);
+	background:-ms-linear-gradient(top, #e9e9e9 5%, #f9f9f9 100%);
+	background:linear-gradient(to bottom, #e9e9e9 5%, #f9f9f9 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#e9e9e9', endColorstr='#f9f9f9',GradientType=0);
+	background-color:#e9e9e9;
+}
+.buy:active {
+	position:relative;
+	top:1px;
+}
+.wrapper-form {
+    display: flex;
+    justify-content: space-around;
+}
+.bet-form {
+    width: 700px;
+    margin-bottom: 150px;
+    border-style: solid;
+    border-color: red;
+    display: flex;
+    flex-direction: row;
+    color: white
+        
+}
+.bet-form .wrapp-create {
+    margin: 30px;
+    display: flex;
+    flex-direction: column;
+}
+.bet-form label {
+    margin-top: 10px;
+}
+.wrapp-create input{
+    margin-top: 10px;
+}
+.wrapp-create a{
+    margin-top: 10px;
+    color: white;
+    text-decoration: none;
+}
+.wrapper-img {
+    margin-top: 20px;
+    height: 240px;
+    width: 380px;
+    display: inline-block;
+    overflow: hidden;
+}
+.wrapper-img img{
+    height:100%    
+}.login-form {
+    display: flex;
+    flex-direction: column;
+}
+.login-form label {
+    margin-top: 10px;
+}.contact-wrapper {
+    display: flex;
+    margin-top: 30px;
+}
+.contacts {
+    width: 300px;
+}
+.contacts a {
+    margin-top: 30px;
+    font-weight: bold;
+    font-size: 20px;
+}
+@media screen and (max-width: 768px) {
+    .contact-wrapper {
+        flex-direction: column;
+    }
+    .contacts {
+        margin-bottom: 40px;
+    }
+}.register-form {
+    display: flex;
+    flex-direction: column;
+}
+.register-form label{
+    margin-top: 10px;
+}.button{
+    padding: 1em 1em 1em 1.5em;
+    text-transform: uppercase;
+    cursor:pointer;
+    border-radius: 3px;
+    letter-spacing: 1px;
+    cursor:pointer;
+    font-size: 14px;
+    margin:1em
+    
+}
+.button:hover{
+    opacity:1;
+}
+.button_green{
+    background: #5fcac6;
+    border: 1px solid #54aca9;
+    color: #fff;
+}
+.button_bordered{
+    background: #eceef4;
+    border:1px solid #c9d0e1;
+    color:#a5abc5;
+   
+}
+
+
+
+
+.payment_btn button i{
+    position: absolute;
+    top:-8px;
+    right:-8px;
+    font-size: 20px;
+    color:blue;
+}
+.main_wrapper-head-buttons{
+    display:flex;
+    flex-direction:column;
+    
+    flex-wrap: nowrap;
+    
+}
+.flex-bottom img{
+    max-width: 80px;
+    
+}
+.flex-bottom{
+    display: flex;
+
+}
+.card-data{
+    display:flex;
+    justify-content:space-between;
+    
+}
+.choose-wrapper span{
+    display: flex;
+    justify-content: center;
+}
+.choose-wrapper{
+    margin:0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.upload_list {
+    border: 1px solid #e6e8ee;
+    margin-top: 2em;
+    padding: 2em;
+    border-radius: 3px;
+    color: #a5abc5;
+}
+
+h2::before {
+    counter-increment: section;
+    content: counter(section);
+    font-size: 16px;
+    text-align: center;
+    line-height: 2.3;
+    font-family: 'proxima_nova_altbold';
+    font-weight: 400;
+    border: 1px solid #6E768F;
+    display: block;
+    width: 36px;
+    height: 36px;
+    border-radius: 19px;
+    position:absolute;
+    top: -0.4em;
+    left: -3.5em;
+}
+h2 {
+    font-size: 1.3em;
+
+    font-weight: 600;
+    position: relative;
+    margin-bottom: 2.5em;
+    margin-top: 2.5em;
+    letter-spacing: 0.05em;
+}
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+fieldset {
+    padding: 0;
+}
+
+fieldset {
+    border: none;
+}
+.pay-input {
+    padding: 1.2em;
+    display: block;
+    width: 22em;
+    border-radius: 4px;
+    margin-top: 1em;
+    border: 1px solid #d5d7e0;
+}
+#card-number {
+    width: 26em;
+    position: relative;
+}
+
+input {
+    margin-top: 0.5em;
+    border-radius: 4px;
+    padding: 1em;
+    font-size: 0.8em;
+    border: 1px solid #d5d7e0;
+}
+.pay-input{
+    margin-right:1em;
+}
+
+
+.flex-end{
+    display: flex;
+    
+}
+a {
+    transition: opacity 0.3s;
+    text-decoration: none;
+    color: inherit;
+}
+.flex-end{
+    text-align: right;
+    line-height: 5em;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    align-items: center;
+}
+.card-details{
+    display: flex;
+    flex-wrap: wrap;
+}
+.autorisation{
+   display: flex;
+    flex-wrap: wrap; 
+}
+
+.pay-input:required:valid {
+  
+    background-size: 2em;
+    background-repeat: no-repeat;
+    background-position: center right 5%;
+}
+
+.pay-input:required:invalid:not(:placeholder-shown) {
+
+    background-size: 2em;
+    background-repeat: no-repeat;
+    background-position: center right 5%;
+}
+label[for="card-number"]::after {
+
+    font-size: 1.8em;
+    content: "\f1f0";
+    position: absolute;
+    background-color: #fff;
+    top: 1em;
+    right: 1.2em;
+    color: #d5d7e0;
+    z-index: 1
+}
+.flex-end{
+    margin-top: 4em
+}
+.flex-end label{
+    
+    margin-right: 1em;
+    font-size: 0.8em;
+}
+.flex-end a{
+    text-decoration: underline
+}
+.flex_bottom{
+    display:flex;
+    
+}
+label {
+    margin-top: 10px;
+}
